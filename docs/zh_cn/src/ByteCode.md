@@ -183,9 +183,106 @@
 | 0xA6        | VM_LDIV          | -               | 将虚拟机栈顶的两个long值相除，并将结果压入虚拟机栈 |
 | 0xA7        | VM_LREM          | -               | 将虚拟机栈顶的两个long值取余，并将结果压入虚拟机栈 |
 | 0xA8        | VM_LNEG          | -               | 将虚拟机栈顶的long值取负，并将结果压入虚拟机栈 |
-
-
-
+| 二进制字节  | 助记符号          | 参数            | 描述                                                            |
+| :---------- | :--------------: | :-------------: | :-------------------------------------------------------------- |
+| 0xA9        | VM_FADD          | -               | 将虚拟机栈顶的两个float值相加，并将结果压入虚拟机栈               |
+| 0xAA        | VM_FSUB          | -               | 将虚拟机栈顶的两个float值相减，并将结果压入虚拟机栈               |
+| 0xAB        | VM_FMUL          | -               | 将虚拟机栈顶的两个float值相乘，并将结果压入虚拟机栈               |
+| 0xAC        | VM_FDIV          | -               | 将虚拟机栈顶的两个float值相除，并将结果压入虚拟机栈               |
+| 0xAD        | VM_FREM          | -               | 将虚拟机栈顶的两个float值取余，并将结果压入虚拟机栈               |
+| 0xAE        | VM_FNEG          | -               | 将虚拟机栈顶的float值取负，并将结果压入虚拟机栈                 |
+| 0xAF        | VM_DADD          | -               | 将虚拟机栈顶的两个double值相加，并将结果压入虚拟机栈              |
+| 0xB0        | VM_DSUB          | -               | 将虚拟机栈顶的两个double值相减，并将结果压入虚拟机栈              |
+| 0xB1        | VM_DMUL          | -               | 将虚拟机栈顶的两个double值相乘，并将结果压入虚拟机栈              |
+| 0xB2        | VM_DDIV          | -               | 将虚拟机栈顶的两个double值相除，并将结果压入虚拟机栈              |
+| 0xB3        | VM_DREM          | -               | 将虚拟机栈顶的两个double值取余，并将结果压入虚拟机栈              |
+| 0xB4        | VM_DNEG          | -               | 将虚拟机栈顶的double值取负，并将结果压入虚拟机栈                |
+| 0xB5        | VM_ISHL          | -               | 将虚拟机栈顶的int值左移指定位数，并将结果压入虚拟机栈             |
+| 0xB6        | VM_ISHR          | -               | 将虚拟机栈顶的int值右移指定位数，并将结果压入虚拟机栈             |
+| 0xB7        | VM_IUSHR         | -               | 将虚拟机栈顶的int值无符号右移指定位数，并将结果压入虚拟机栈         |
+| 0xB8        | VM_LSHL          | -               | 将虚拟机栈顶的long值左移指定位数，并将结果压入虚拟机栈            |
+| 0xB9        | VM_LSHR          | -               | 将虚拟机栈顶的long值右移指定位数，并将结果压入虚拟机栈            |
+| 0xBA        | VM_LUSHR         | -               | 将虚拟机栈顶的long值无符号右移指定位数，并将结果压入虚拟机栈        |
+| 0xBB        | VM_IAND          | -               | 对虚拟机栈顶的两个int值执行按位与操作，并将结果压入虚拟机栈        |
+| 0xBC        | VM_IOR           | -               | 对虚拟机栈顶的两个int值执行按位或操作，并将结果压入虚拟机栈        |
+| 0xBD        | VM_IXOR          | -               | 对虚拟机栈顶的两个int值执行按位异或操作，并将结果压入虚拟机栈      |
+| 0xBE        | VM_LAND          | -               | 对虚拟机栈顶的两个long值执行按位与操作，并将结果压入虚拟机栈       |
+| 0xBF        | VM_LOR           | -               | 对虚拟机栈顶的两个long值执行按位或操作，并将结果压入虚拟机栈       |
+| 0xC0        | VM_LXOR          | -               | 对虚拟机栈顶的两个long值执行按位异或操作，并将结果压入虚拟机栈     |
+| 0xC1        | VM_IFEQ          | (Short)Offset   | 如果虚拟机栈顶的int类型值为0，则跳转                              |
+| 0xC2        | VM_IFNE          | (Short)Offset   | 如果虚拟机栈顶的int类型值不为0，则跳转                            |
+| 0xC3        | VM_IFLT          | (Short)Offset   | 如果虚拟机栈顶的int类型值小于0，则跳转                            |
+| 0xC4        | VM_IFGE          | (Short)Offset   | 如果虚拟机栈顶的int类型值大于等于0，则跳转                        |
+| 0xC5        | VM_IFGT          | (Short)Offset   | 如果虚拟机栈顶的int类型值大于0，则跳转                            |
+| 0xC6        | VM_IFLE          | (Short)Offset   | 如果虚拟机栈顶的int类型值小于等于0，则跳转                        |
+| 0xC7        | VM_IFNULL        | (Short)Offset   | 如果虚拟机栈顶的引用类型值为null，则跳转                         |
+| 0xC8        | VM_IFNOTNULL     | (Short)Offset   | 如果虚拟机栈顶的引用类型值不为null，则跳转                       |
+| 0xC9        | VM_IF_ICMPEQ     | (Short)Offset   | 如果虚拟机栈顶的两个int类型值相等，则跳转                        |
+| 0xCA        | VM_IF_ICMPNE     | (Short)Offset   | 如果虚拟机栈顶的两个int类型值不相等，则跳转                      |
+| 0xCB        | VM_IF_ICMPLT     | (Short)Offset   | 如果虚拟机栈顶的第一个int类型值小于第二个，则跳转                |
+| 0xCC        | VM_IF_ICMPGE     | (Short)Offset   | 如果虚拟机栈顶的第一个int类型值大于等于第二个，则跳转            |
+| 0xCD        | VM_IF_ICMPGT     | (Short)Offset   | 如果虚拟机栈顶的第一个int类型值大于第二个，则跳转                |
+| 0xCE        | VM_IF_ICMPLE     | (Short)Offset   | 如果虚拟机栈顶的第一个int类型值小于等于第二个，则跳转            |
+| 0xCF        | VM_IF_ACMPEQ     | (Short)Offset   | 如果虚拟机栈顶的两个引用类型值相等，则跳转                      |
+| 0xD0        | VM_IF_ACMPNE     | (Short)Offset   | 如果虚拟机栈顶的两个引用类型值不相等，则跳转                    |
+| 0xD1        | VM_ICMP          | -               | 比较虚拟机栈顶的两个long类型值，如果前者较大，则压入1；相等，则压入0；后者较大，则压入-1 |
+| 0xD2        | VM_FCMP          | -               | 比较虚拟机栈顶的两个float类型值，如果前者较大，则压入1；相等，则压入0；后者较大，则压入-1 |
+| 0xD3        | VM_DCMP          | -               | 比较虚拟机栈顶的两个double类型值，如果前者较大，则压入1；相等，则压入0；后者较大，则压入-1 |
+| 0xD4        | NEW                       | (Long)ClassID | 创建指定类的新对象并将其链接推送到本地栈           |
+| 0xD5        | VM_NEW                    | (Long)ClassID | 创建指定类的新对象并将其链接推送到虚拟机栈         |
+| 0xD6        | CHECK_CAST                | (Long)DataID, (Long)ClassID | 类型强制转换                                     |
+| 0xD7        | INSTANCE_OF               | (Long)DataID, (Long)ClassID | 判断继承关系，如果为真则向本地栈压入1；否则压入0    |
+| 0xD8        | GET_FIELD                 | (Long)DataID, (Long)FieldID | 获取字段值并压入本地栈                              |
+| 0xD9        | PUT_FIELD                 | (Long)DataID, (Long)FieldID | 设置字段值（从本地栈顶取出）                           |
+| 0xDA        | GET_STATIC                | (Long)DataID, (Long)FieldID | 获取静态字段值并压入本地栈                         |
+| 0xDB        | PUT_STATIC                | (Long)DataID, (Long)FieldID | 设置静态字段值（从本地栈顶取出）                       |
+| 0xDC        | NEW_ARRAY                 | -                 | 创建指定类型的新数组并将其链接推送到本地栈         |
+| 0xDD        | VM_NEW_ARRAY              | -                 | 创建指定类型的新数组并将其链接推送到虚拟机栈       |
+| 0xDC        | NEW_TYPE_ARRAY            | -                 | 创建引用类型数组并将其链接推送到本地栈             |
+| 0xDD        | VM_NEW_TYPE_ARRAY         | -                 | 创建引用类型数组并将其链接推送到虚拟机栈           |
+| 0xDE        | ARRAY_LENGTH              | -                 | 获取本地栈顶数组的长度并将其推送到本地栈           |
+| 0xDF        | VM_ARRAY_LENGTH           | -                 | 获取虚拟机栈顶数组的长度并将其推送到虚拟机栈        |
+| 0xE0        | ARRAY_GET                 | -                 | 获取指定索引处数组的值并将其推送到本地栈           |
+| 0xE1        | VM_ARRAY_GET              | -                 | 获取指定索引处数组的值并将其推送到虚拟机栈         |
+| 0xE2        | ARRAY_PUT                 | -                 | 设置指定索引处数组的值并将其推送到本地栈           |
+| 0xE3        | VM_ARRAY_PUT              | -                 | 设置指定索引处数组的值并将其推送到虚拟机栈         |
+| 0xE4        | MULTI_ARRAY               | -                 | 创建指定维度的新数组并将其链接推送到本地栈         |
+| 0xE5        | VM_MULTI_ARRAY            | -                 | 创建指定维度的新数组并将其链接推送到虚拟机栈       |
+| 0xE6        | MULTI_TYPE_ARRAY          | -                 | 创建指定维度的新数组并将其链接推送到本地栈         |
+| 0xE7        | VM_MULTI_TYPE_ARRAY       | -                 | 创建指定维度的新数组并将其链接推送到虚拟机栈       |
+| 0xE8        | INVOKE_VIRTUAL            | -                 | 调用指定方法并将结果推送到本地栈                 |
+| 0xE9        | VM_INVOKE_VIRTUAL         | -                 | 调用指定方法并将结果推送到虚拟机栈               |
+| 0xEA        | INVOKE_STATIC             | -                 | 调用指定静态方法并将结果推送到本地栈             |
+| 0xEB        | VM_INVOKE_STATIC          | -                 | 调用指定静态方法并将结果推送到虚拟机栈           |
+| 0xEC        | INVOKE_SPECIAL            | -                 | 调用指定特殊方法并将结果推送到本地栈             |
+| 0xED        | VM_INVOKE_SPECIAL         | -                 | 调用指定特殊方法并将结果推送到虚拟机栈           |
+| 0xEE        | INVOKE_INTERFACE          | -                 | 调用指定接口方法并将结果推送到本地栈             |
+| 0xEF        | VM_INVOKE_INTERFACE       | -                 | 调用指定接口方法并将结果推送到虚拟机栈           |
+| 0xF0        | RETURN                    | -                 | void类型函数返回                                |
+| 0xF1        | RETURN_INT                | -                 | 返回int类型值（本地栈顶）                        |
+| 0xF2        | RETURN_LONG               | -                 | 返回long类型值（本地栈顶）                       |
+| 0xF3        | RETURN_FLOAT              | -                 | 返回float类型值（本地栈顶）                      |
+| 0xF4        | RETURN_DOUBLE             | -                 | 返回double类型值（本地栈顶）                     |
+| 0xF5        | RETURN_OBJECT             | -                 | 返回object类型值（本地栈顶）                     |
+| 0xF6        | VM_RETURN                 | -                 | void类型函数返回                                |
+| 0xF7        | VM_RETURN_INT             | -                 | 返回int类型值（虚拟机栈顶）                      |
+| 0xF8        | VM_RETURN_LONG            | -                 | 返回long类型值（虚拟机栈顶）                     |
+| 0xF9        | VM_RETURN_FLOAT           | -                 | 返回float类型值（虚拟机栈顶）                    |
+| 0xFA        | VM_RETURN_DOUBLE          | -                 | 返回double类型值（虚拟机栈顶）                   |
+| 0xFB        | VM_RETURN_OBJECT          | -                 | 返回object类型值（虚拟机栈顶）                   |
+| 0xFC        | THROW                     | -                 | 抛出异常                                        |
+| 0xFD        | CATCH                     | -                 | 捕获异常                                        |
+| 0xFE        | FINALLY                   | -                 | -                                 |
+| 0xFF        | JSR                       | -                 | 跳转到子程序                                    |
+| 0x100       | PUSH_FROM_CHAR_VMCONST    | -                 | 从虚拟机常量推送char常量到本地栈                     |
+| 0x101       | VM_INSTANCE_OF            | (Long)DataID, (Long)ClassID | 判断继承关系，如果为真则向虚拟机栈压入1；否则压入0    |
+| 0x102       | MONITOR_ENTER             | -                 | 进入监视器                                      |
+| 0x103       | MONITOR_EXIT              | -                 | 离开监视器                                      |
+| 0x104       | BREAKPOINT                | -                 | 断点                                            |
+| 0x105       | VM_GET_FIELD              | (Long)DataID, (Long)FieldID | 获取字段值并压入虚拟机栈                              |
+| 0x106       | VM_PUT_FIELD              | (Long)DataID, (Long)FieldID | 设置字段值（从虚拟机栈顶取出）                           |
+| 0x107       | VM_GET_STATIC             | (Long)DataID, (Long)FieldID | 获取静态字段值并压入虚拟机栈                         |
+| 0x108       | VM_PUT_STATIC             | (Long)DataID, (Long)FieldID | 设置静态字段值（从虚拟机栈顶取出）                       |
 
 
 
