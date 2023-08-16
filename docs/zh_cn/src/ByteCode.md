@@ -236,28 +236,28 @@
 | 0xD9        | PUT_FIELD                 | (Long)DataID, (Long)FieldID | 设置字段值（从本地栈顶取出）                           |
 | 0xDA        | GET_STATIC                | (Long)DataID, (Long)FieldID | 获取静态字段值并压入本地栈                         |
 | 0xDB        | PUT_STATIC                | (Long)DataID, (Long)FieldID | 设置静态字段值（从本地栈顶取出）                       |
-| 0xDC        | NEW_ARRAY                 | -                 | 创建指定类型的新数组并将其链接推送到本地栈         |
-| 0xDD        | VM_NEW_ARRAY              | -                 | 创建指定类型的新数组并将其链接推送到虚拟机栈       |
-| 0xDC        | NEW_TYPE_ARRAY            | -                 | 创建引用类型数组并将其链接推送到本地栈             |
-| 0xDD        | VM_NEW_TYPE_ARRAY         | -                 | 创建引用类型数组并将其链接推送到虚拟机栈           |
+| 0xDC        | NEW_ARRAY                 | (Long)DataID     | 创建指定类型的新数组并将其链接推送到本地栈         |
+| 0xDD        | VM_NEW_ARRAY              | (Long)DataID      | 创建指定类型的新数组并将其链接推送到虚拟机栈       |
+| 0xDC        | NEW_TYPE_ARRAY            | (Long)ClassID      | 创建引用类型数组并将其链接推送到本地栈             |
+| 0xDD        | VM_NEW_TYPE_ARRAY         | (Long)ClassID     | 创建引用类型数组并将其链接推送到虚拟机栈           |
 | 0xDE        | ARRAY_LENGTH              | -                 | 获取本地栈顶数组的长度并将其推送到本地栈           |
 | 0xDF        | VM_ARRAY_LENGTH           | -                 | 获取虚拟机栈顶数组的长度并将其推送到虚拟机栈        |
-| 0xE0        | ARRAY_GET                 | -                 | 获取指定索引处数组的值并将其推送到本地栈           |
-| 0xE1        | VM_ARRAY_GET              | -                 | 获取指定索引处数组的值并将其推送到虚拟机栈         |
-| 0xE2        | ARRAY_PUT                 | -                 | 设置指定索引处数组的值并将其推送到本地栈           |
-| 0xE3        | VM_ARRAY_PUT              | -                 | 设置指定索引处数组的值并将其推送到虚拟机栈         |
-| 0xE4        | MULTI_ARRAY               | -                 | 创建指定维度的新数组并将其链接推送到本地栈         |
-| 0xE5        | VM_MULTI_ARRAY            | -                 | 创建指定维度的新数组并将其链接推送到虚拟机栈       |
-| 0xE6        | MULTI_TYPE_ARRAY          | -                 | 创建指定维度的新数组并将其链接推送到本地栈         |
-| 0xE7        | VM_MULTI_TYPE_ARRAY       | -                 | 创建指定维度的新数组并将其链接推送到虚拟机栈       |
-| 0xE8        | INVOKE_VIRTUAL            | -                 | 调用指定方法并将结果推送到本地栈                 |
-| 0xE9        | VM_INVOKE_VIRTUAL         | -                 | 调用指定方法并将结果推送到虚拟机栈               |
-| 0xEA        | INVOKE_STATIC             | -                 | 调用指定静态方法并将结果推送到本地栈             |
-| 0xEB        | VM_INVOKE_STATIC          | -                 | 调用指定静态方法并将结果推送到虚拟机栈           |
-| 0xEC        | INVOKE_SPECIAL            | -                 | 调用指定特殊方法并将结果推送到本地栈             |
-| 0xED        | VM_INVOKE_SPECIAL         | -                 | 调用指定特殊方法并将结果推送到虚拟机栈           |
-| 0xEE        | INVOKE_INTERFACE          | -                 | 调用指定接口方法并将结果推送到本地栈             |
-| 0xEF        | VM_INVOKE_INTERFACE       | -                 | 调用指定接口方法并将结果推送到虚拟机栈           |
+| 0xE0        | ARRAY_GET                 | (Long)DataID      | 获取指定索引处数组的值并将其推送到本地栈           |
+| 0xE1        | VM_ARRAY_GET              | (Long)DataID       | 获取指定索引处数组的值并将其推送到虚拟机栈         |
+| 0xE2        | ARRAY_PUT                 | (Long)DataID      | 设置指定索引处数组的值并（从本地栈栈顶获取值）           |
+| 0xE3        | VM_ARRAY_PUT              | (Long)DataID      | 设置指定索引处数组的值并（从虚拟机栈栈顶获取值）         |
+| 0xE4        | MULTI_ARRAY               | (Long)DataID, (Int)Dimension   | 创建指定维度的新数组并将其链接推送到本地栈         |
+| 0xE5        | VM_MULTI_ARRAY            | (Long)DataID, (Int)Dimension   | 创建指定维度的新数组并将其链接推送到虚拟机栈       |
+| 0xE6        | MULTI_TYPE_ARRAY          | (Long)DataID, (Long)ClassID, (Int)Dimension   | 创建指定维度的新数组并将其链接推送到本地栈         |
+| 0xE7        | VM_MULTI_TYPE_ARRAY       | (Long)DataID, (Long)ClassID, (Int)Dimension   | 创建指定维度的新数组并将其链接推送到虚拟机栈       |
+| 0xE8        | INVOKE_VIRTUAL            | (Long)DataID, (Long)FuncID | 调用指定方法并将结果推送到本地栈                 |
+| 0xE9        | VM_INVOKE_VIRTUAL         | (Long)DataID, (Long)FuncID | 调用指定方法并将结果推送到虚拟机栈               |
+| 0xEA        | INVOKE_STATIC             | (Long)ClassID, (Long)FuncID | 调用指定静态方法并将结果推送到本地栈             |
+| 0xEB        | VM_INVOKE_STATIC          | (Long)ClassID, (Long)FuncID | 调用指定静态方法并将结果推送到虚拟机栈           |
+| 0xEC        | INVOKE_SPECIAL            | (Long)DataID, (Long)FuncID | 调用指定特殊方法并将结果推送到本地栈             |
+| 0xED        | VM_INVOKE_SPECIAL         | (Long)DataID, (Long)FuncID | 调用指定特殊方法并将结果推送到虚拟机栈           |
+| 0xEE        | INVOKE_INTERFACE          | (Long)DataID, (Long)FuncID | 调用指定接口方法并将结果推送到本地栈             |
+| 0xEF        | VM_INVOKE_INTERFACE       | (Long)DataID, (Long)FuncID | 调用指定接口方法并将结果推送到虚拟机栈           |
 | 0xF0        | RETURN                    | -                 | void类型函数返回                                |
 | 0xF1        | RETURN_INT                | -                 | 返回int类型值（本地栈顶）                        |
 | 0xF2        | RETURN_LONG               | -                 | 返回long类型值（本地栈顶）                       |
@@ -270,7 +270,7 @@
 | 0xF9        | VM_RETURN_FLOAT           | -                 | 返回float类型值（虚拟机栈顶）                    |
 | 0xFA        | VM_RETURN_DOUBLE          | -                 | 返回double类型值（虚拟机栈顶）                   |
 | 0xFB        | VM_RETURN_OBJECT          | -                 | 返回object类型值（虚拟机栈顶）                   |
-| 0xFC        | THROW                     | -                 | 抛出异常                                        |
+| 0xFC        | THROW                     | (Long)ClassID     | 抛出异常                                        |
 | 0xFD        | CATCH                     | -                 | 捕获异常                                        |
 | 0xFE        | FINALLY                   | -                 | -                                 |
 | 0xFF        | JSR                       | -                 | 跳转到子程序                                    |
