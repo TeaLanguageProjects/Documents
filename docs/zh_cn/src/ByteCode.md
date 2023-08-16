@@ -10,4 +10,5 @@
 | :---------- | :----: | :--------: | :----- |
 | 0x00 | NOP | - | 不执行任何操作 |
 | 0x01 | PUSH_NULL | - | 将NULL值Push到本地栈 |
-| 0x02 | PUSH_FROM_BYTE_VAR | (Long)DataID | 将指定的Byte变量Push到本地栈 |
+| 0x02 | PUSH_FROM_BYTE_VAR | (Long)DataID | 将指定的byte类型变量Push到本地栈 |
+| 0x03 | PUSH_FROM_SHORT_VAR | (Long)DataID | 将指定的short类型变量Push到本地栈 |
