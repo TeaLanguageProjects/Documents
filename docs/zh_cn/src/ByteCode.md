@@ -133,7 +133,56 @@
 | 0x74      | LAND               | -          | 对本地栈顶的两个long执行按位与操作，并将结果推送到本地栈上       |
 | 0x75      | LOR                | -          | 对本地栈顶的两个long执行按位或操作，并将结果推送到本地栈上       |
 | 0x76      | LXOR               | -          | 对本地栈顶的两个long执行按位异或操作，并将结果推送到本地栈上     |
-
+| 0x77      | IFEQ          | (Short)Offset | 如果本地栈顶的int值等于0，则跳转                  |
+| 0x78      | IFNE          | (Short)Offset | 如果本地栈顶的int值不等于0，则跳转                |
+| 0x79      | IFLT          | (Short)Offset | 如果本地栈顶的int值小于0，则跳转                  |
+| 0x7A      | IFGE          | (Short)Offset | 如果本地栈顶的int值大于等于0，则跳转              |
+| 0x7B      | IFGT          | (Short)Offset | 如果本地栈顶的int值大于0，则跳转                |
+| 0x7C      | IFLE          | (Short)Offset | 如果本地栈顶的int值小于等于0，则跳转              |
+| 0x7D      | IFNULL        | (Short)Offset | 如果本地栈顶的引用类型值为null，则跳转             |
+| 0x7E      | IFNOTNULL     | (Short)Offset | 如果本地栈顶的引用类型值不为null，则跳转           |
+| 0x7F      | GOTO          | (Short)Offset | 跳转到指定标签                              |
+| 0x80      | IF_ICMPEQ     | (Short)Offset | 如果本地栈顶的两个int值相等，则跳转               |
+| 0x81      | IF_ICMPNE     | (Short)Offset | 如果本地栈顶的两个int值不相等，则跳转             |
+| 0x82      | IF_ICMPLT     | (Short)Offset | 如果本地栈顶的两个int值小于，则跳转               |
+| 0x83      | IF_ICMPGE     | (Short)Offset | 如果本地栈顶的两个int值大于等于，则跳转           |
+| 0x84      | IF_ICMPGT     | (Short)Offset | 如果本地栈顶的两个int值大于，则跳转             |
+| 0x85      | IF_ICMPLE     | (Short)Offset | 如果本地栈顶的两个int值小于等于，则跳转           |
+| 0x86      | IF_ACMPEQ     | (Short)Offset | 如果本地栈顶的两个引用类型值相等，则跳转          |
+| 0x87      | IF_ACMPNE     | (Short)Offset | 如果本地栈顶的两个引用类型值不相等，则跳转        |
+| 0x88      | ICMP          | -             | 比较本地栈顶的两个long值，前者较大则推送1；相等则推送0；后者较大则推送-1  |
+| 0x89      | FCMP          | -             | 比较本地栈顶的两个float值，前者较大则推送1；相等则推送0；后者较大则推送-1 |
+| 0x8A      | DCMP          | -             | 比较本地栈顶的两个double值，前者较大则推送1；相等则推送0；后者较大则推送-1 |
+| 0x8B        | VM_INT_TO_FLOAT  | -               | 将虚拟机栈顶的int类型值转换为float类型值  |
+| 0x8C        | VM_INT_TO_LONG   | -               | 将虚拟机栈顶的int类型值转换为long类型值   |
+| 0x8D        | VM_INT_TO_DOUBLE | -               | 将虚拟机栈顶的int类型值转换为double类型值 |
+| 0x8E        | VM_FLOAT_TO_INT  | -               | 将虚拟机栈顶的float类型值转换为int类型值  |
+| 0x8F        | VM_FLOAT_TO_LONG | -               | 将虚拟机栈顶的float类型值转换为long类型值 |
+| 0x90        | VM_FLOAT_TO_DOUBLE| -               | 将虚拟机栈顶的float类型值转换为double类型值|
+| 0x91        | VM_LONG_TO_INT   | -               | 将虚拟机栈顶的long类型值转换为int类型值   |
+| 0x92        | VM_LONG_TO_FLOAT | -               | 将虚拟机栈顶的long类型值转换为float类型值 |
+| 0x93        | VM_LONG_TO_DOUBLE| -               | 将虚拟机栈顶的long类型值转换为double类型值|
+| 0x94        | VM_DOUBLE_TO_INT | -               | 将虚拟机栈顶的double类型值转换为int类型值 |
+| 0x95        | VM_DOUBLE_TO_FLOAT| -              | 将虚拟机栈顶的double类型值转换为float类型值|
+| 0x96        | VM_DOUBLE_TO_LONG| -               | 将虚拟机栈顶的double类型值转换为long类型值 |
+| 0x97        | VM_INT_TO_BYTE   | -               | 将虚拟机栈顶的int类型值转换为byte类型值  |
+| 0x98        | VM_INT_TO_SHORT  | -               | 将虚拟机栈顶的int类型值转换为short类型值 |
+| 0x99        | VM_INT_TO_CHAR   | -               | 将虚拟机栈顶的int类型值转换为char类型值  |
+| 0x9A        | VM_CHAR_TO_INT   | -               | 将虚拟机栈顶的char类型值转换为int类型值  |
+| 0x9B        | VM_SHORT_TO_INT  | -               | 将虚拟机栈顶的short类型值转换为int类型值 |
+| 0x9C        | VM_BYTE_TO_INT   | -               | 将虚拟机栈顶的byte类型值转换为int类型值  |
+| 0x9D        | VM_IADD          | -               | 将虚拟机栈顶的两个int值相加，并将结果压入虚拟机栈 |
+| 0x9E        | VM_ISUB          | -               | 将虚拟机栈顶的两个int值相减，并将结果压入虚拟机栈 |
+| 0x9F        | VM_IMUL          | -               | 将虚拟机栈顶的两个int值相乘，并将结果压入虚拟机栈 |
+| 0xA0        | VM_IDIV          | -               | 将虚拟机栈顶的两个int值相除，并将结果压入虚拟机栈 |
+| 0xA1        | VM_IREM          | -               | 将虚拟机栈顶的两个int值取余，并将结果压入虚拟机栈 |
+| 0xA2        | VM_INEG          | -               | 将虚拟机栈顶的int值取负，并将结果压入虚拟机栈 |
+| 0xA3        | VM_LADD          | -               | 将虚拟机栈顶的两个long值相加，并将结果压入虚拟机栈 |
+| 0xA4        | VM_LSUB          | -               | 将虚拟机栈顶的两个long值相减，并将结果压入虚拟机栈 |
+| 0xA5        | VM_LMUL          | -               | 将虚拟机栈顶的两个long值相乘，并将结果压入虚拟机栈 |
+| 0xA6        | VM_LDIV          | -               | 将虚拟机栈顶的两个long值相除，并将结果压入虚拟机栈 |
+| 0xA7        | VM_LREM          | -               | 将虚拟机栈顶的两个long值取余，并将结果压入虚拟机栈 |
+| 0xA8        | VM_LNEG          | -               | 将虚拟机栈顶的long值取负，并将结果压入虚拟机栈 |
 
 
 
