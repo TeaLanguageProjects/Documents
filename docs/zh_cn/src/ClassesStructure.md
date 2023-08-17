@@ -16,6 +16,9 @@
 | Type           | 类型       | 存储类的类型（普通类，函数或者接口等） |
 | AccessModifier | 访问修饰符 | 存储类的访问修饰符 |
 | NonAccessModifiers | 非访问修饰符 | 存储类的非访问修饰符 |
+| Interfaces     | 接口 | 存储了类实现的接口的信息 |
+| SuperClasses   | 父类 | 存储了类的父类 |
+| Annotations    | 注解 | 存储了类的所有注解 |
 | ClassName      | 类名       | - |
 | PackageName    | 包名       | - |
 | LocalData      | 本地数据   | 存储类的本地数据（如类的类型为函数，则存储程序代码） |
@@ -46,10 +49,16 @@
     存储类的访问修饰符，如Public，Private等
 12. **NonAccessModifiers:**
     存储类的非访问修饰符，如Static等
-13. **ClassName:**
+13. **Interfaces:**
+    存储了类实现的接口的列表
+14. **SuperClasses:**
+    存储了类继承的父类的数据，在Tea语言中每个类只能继承一个类
+15. **Annotations:**
+    存储了类上的所有注解的信息
+16. **ClassName:**
     此类的类名，用于区分相同软件包的不同类
-14. **PackageName:**
+17. **PackageName:**
     此类的包名，用于区分不同软件包的程序
-15. **LocalData:**
+18. **LocalData:**
     存储此类的数据，例如，如果类的类型是函数则存储程序代码
    
