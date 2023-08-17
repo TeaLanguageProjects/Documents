@@ -7,7 +7,7 @@
 - [虚拟机字节码](./src/ByteCode.md)
 - [类结构](./src/ClassesStructure.md)
 - [基本数据类型](./src/BasicDataTypes.md)
-
+- [访问修饰符](./src/AccessModifier.md)
 
 
 
