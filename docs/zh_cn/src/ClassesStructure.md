@@ -15,6 +15,7 @@
 | LocalIndex     | 本地类索引 | 存储类中字符串符号（如各种以字符串命名的变量）到类内部的ID的索引信息 |
 | Type           | 类型       | 存储类的类型（普通类，函数或者接口等） |
 | AccessModifier | 访问修饰符 | 存储类的访问修饰符 |
+| NonAccessModifiers | 非访问修饰符 | 存储类的非访问修饰符 |
 | ClassName      | 类名       | - |
 | PackageName    | 包名       | - |
 | LocalData      | 本地数据   | 存储类的本地数据（如类的类型为函数，则存储程序代码） |
@@ -43,10 +44,12 @@
     表明该类的类型，如普通类，接口，枚举，注解，函数等
 11. **AccessModifier:**
     存储类的访问修饰符，如Public，Private等
-12. **ClassName:**
+12. **NonAccessModifiers:**
+    存储类的非访问修饰符，如Static等
+13. **ClassName:**
     此类的类名，用于区分相同软件包的不同类
-13. **PackageName:**
+14. **PackageName:**
     此类的包名，用于区分不同软件包的程序
-14. **LocalData:**
+15. **LocalData:**
     存储此类的数据，例如，如果类的类型是函数则存储程序代码
    
